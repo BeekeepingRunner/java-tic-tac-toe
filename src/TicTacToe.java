@@ -20,6 +20,6 @@ public class TicTacToe {
 
         TicTacToe game = new TicTacToe(playerOne, playerTwo);
 
-        
+
     }
 }
