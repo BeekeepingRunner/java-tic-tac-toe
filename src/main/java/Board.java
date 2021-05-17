@@ -39,7 +39,7 @@ public class Board implements Printable {
             System.out.println(fields[i][gridDimension - 1]);
 
             if (i < 2)
-                System.out.println("\n------");
+                System.out.println("-----");
         }
     }
 }
