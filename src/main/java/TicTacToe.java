@@ -1,13 +1,17 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TicTacToe {
 
-    Player playerOne;
-    Player playerTwo;
+    ArrayList<Player> players;
+
+    Board board = new Board();
+    Commentator commentator;
 
     public TicTacToe(Player one, Player two) {
-        playerOne = one;
-        playerTwo = two;
+        players.add(one);
+        players.add(two);
+        commentator = new Commentator(players);
     }
 
     public static void main(String[] args) {
@@ -20,6 +24,6 @@ public class TicTacToe {
 
         TicTacToe game = new TicTacToe(playerOne, playerTwo);
 
-
+        
     }
 }
