@@ -9,6 +9,6 @@ public class Move {
     Move(int playerNum, int x, int y) {
         this.playerNum = playerNum;
         this.x = x;
-        this. y = y;
+        this.y = y;
     }
 }
