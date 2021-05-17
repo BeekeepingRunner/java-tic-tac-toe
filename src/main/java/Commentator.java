@@ -10,9 +10,10 @@ public class Commentator implements Printable{
 
     @Override
     public void print(ArrayList<Move> moves) {
+        assert(moves.size() > 0);
 
         Move move = moves.get(moves.size() - 1);    // get last move
-        Player p = players.get(move.playerNum);
+        Player p = players.get(move.playerNum - 1); // indexing from 0
 
         StringBuilder sb = new StringBuilder("Player ")
                 .append(p.getName())

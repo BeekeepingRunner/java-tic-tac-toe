@@ -19,14 +19,14 @@ public class Board implements Printable {
 
     @Override
     public void print(ArrayList<Move> moves) {
-
+        assert(moves.size() > 0);
         for (Move move : moves)
         {
             switch (move.playerNum)
             {
-                case 0:
-                    fields[move.x][move.y] = 'O';
                 case 1:
+                    fields[move.x][move.y] = 'O';
+                case 2:
                     fields[move.x][move.y] = 'X';
             }
         }
