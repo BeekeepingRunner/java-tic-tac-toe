@@ -26,8 +26,10 @@ public class Board implements Printable {
             {
                 case TicTacToe.FIRST_PLAYER_ID:
                     fields[move.x][move.y] = 'O';
+                    break;
                 case TicTacToe.SECOND_PLAYER_ID:
                     fields[move.x][move.y] = 'X';
+                    break;
             }
         }
 
