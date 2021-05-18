@@ -3,8 +3,8 @@ import java.util.Scanner;
 
 public class TicTacToe {
 
-    private static final int FIRST = 0;
-    private static final int SECOND = 1;
+    public static final int FIRST_PLAYER_ID = 0;
+    public static final int SECOND_PLAYER_ID = 1;
 
     ArrayList<Player> players;
     ArrayList<Move> moves;
@@ -30,11 +30,11 @@ public class TicTacToe {
             System.out.print("Enter move coordinates (x y): ");
             if (playerOneMoves)
             {
-                this.getPlayerMove(players.get(FIRST).getId());
+                this.getPlayerMove(players.get(FIRST_PLAYER_ID).getId());
                 playerOneMoves = false;
             }
             else {
-                this.getPlayerMove(players.get(SECOND).getId());
+                this.getPlayerMove(players.get(SECOND_PLAYER_ID).getId());
                 playerOneMoves = true;
             }
 

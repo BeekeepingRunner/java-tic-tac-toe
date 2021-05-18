@@ -8,9 +8,9 @@ public class Board implements Printable {
 
     Board() {
 
-        for (int i = 0; i < 3; ++i)
+        for (int i = 0; i < gridDimension; ++i)
         {
-            for (int j = 0; j < 3; ++j)
+            for (int j = 0; j < gridDimension; ++j)
             {
                 fields[i][j] = '\f';
             }
@@ -24,9 +24,9 @@ public class Board implements Printable {
         {
             switch (move.playerNum)
             {
-                case 1:
+                case TicTacToe.FIRST_PLAYER_ID:
                     fields[move.x][move.y] = 'O';
-                case 2:
+                case TicTacToe.SECOND_PLAYER_ID:
                     fields[move.x][move.y] = 'X';
             }
         }
