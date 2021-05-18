@@ -12,7 +12,7 @@ public class Board implements Printable {
         {
             for (int j = 0; j < gridDimension; ++j)
             {
-                fields[i][j] = '\f';
+                fields[i][j] = ' ';
             }
         }
     }

@@ -37,6 +37,7 @@ public class TicTacToe {
                 playerOneMoves = true;
             }
 
+            System.out.println();
             board.print(moves);
             System.out.println();
             commentator.print(moves);
@@ -46,6 +47,7 @@ public class TicTacToe {
 
     private void getPlayerMove(int playerId) {
 
+        System.out.println(players.get(playerId).getName() + " moves now...");
         System.out.println("Enter move coordinates (from range 0 to 2)");
 
         int x, y;
@@ -103,7 +105,7 @@ public class TicTacToe {
         Player playerOne = new Player(scan.nextLine(), 'O');
         System.out.print("Enter player 2. (X mark) name: ");
         Player playerTwo = new Player(scan.nextLine(), 'X');
-
+        System.out.println();
 
         TicTacToe game = new TicTacToe(playerOne, playerTwo);
         // System.out.println(playerOne.getId());
