@@ -27,7 +27,7 @@ public class TicTacToe {
         int moveCount = 0;
         while (true)
         {
-            System.out.print("Enter move coordinates (x y): ");
+            System.out.print("Enter move coordinates (x y) (from range 0 to 2): ");
             if (playerOneMoves)
             {
                 this.getPlayerMove(players.get(FIRST_PLAYER_ID).getId());
@@ -47,10 +47,10 @@ public class TicTacToe {
 
     private void getPlayerMove(int playerId) {
 
+        // TODO: input validation
         Scanner scan = new Scanner(System.in);
         int x = scan.nextInt();
         int y = scan.nextInt();
-        // scan.close();
 
         moves.add(new Move(playerId, x, y));
     }
