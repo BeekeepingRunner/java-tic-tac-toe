@@ -30,11 +30,11 @@ public class TicTacToe {
             System.out.print("Enter move coordinates (x y) (from range 0 to 2): ");
             if (playerOneMoves)
             {
-                this.getPlayerMove(players.get(FIRST_PLAYER_ID).getId());
+                this.getPlayerMove(FIRST_PLAYER_ID);
                 playerOneMoves = false;
             }
             else {
-                this.getPlayerMove(players.get(SECOND_PLAYER_ID).getId());
+                this.getPlayerMove(SECOND_PLAYER_ID);
                 playerOneMoves = true;
             }
 
