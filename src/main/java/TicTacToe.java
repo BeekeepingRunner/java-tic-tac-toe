@@ -27,7 +27,6 @@ public class TicTacToe {
         int moveCount = 0;
         while (true)
         {
-            System.out.print("Enter move coordinates (x y) (from range 0 to 2): ");
             if (playerOneMoves)
             {
                 this.getPlayerMove(FIRST_PLAYER_ID);
@@ -47,19 +46,21 @@ public class TicTacToe {
 
     private void getPlayerMove(int playerId) {
 
+        System.out.println("Enter move coordinates (from range 0 to 2)");
+
         int x, y;
         boolean isMoveCorrect;
-        Scanner scan = new Scanner(System.in);
         do {
             isMoveCorrect = true;
 
-            // TODO: input validation
-            x = scan.nextInt();
-            y = scan.nextInt();
+            System.out.print("x: ");
+            x = getCoordinate();
+            System.out.print("y: ");
+            y = getCoordinate();
 
             // check if a move is in correct range
             if (x < 0 || y < 0 || x > 2 || y > 2) {
-                System.out.print("Incorrect move coordinates range (0-2)! Try again: ");
+                System.out.println("Incorrect move coordinates range (0-2)! Try again: ");
                 isMoveCorrect = false;
                 continue;
             }
@@ -70,14 +71,29 @@ public class TicTacToe {
                 if (oldMove.x == x && oldMove.y == y)
                 {
                     isMoveCorrect = false;
-                    System.out.print("That field is checked! Try again: ");
+                    System.out.println("That field is checked! Try again");
                     break;
                 }
             }
-
         } while (!isMoveCorrect);
 
         moves.add(new Move(playerId, x, y));
+    }
+
+    private int getCoordinate() {
+
+        Scanner scan = new Scanner(System.in);
+        int x = 0;
+
+        while (true) {
+            try {
+                x = Integer.parseInt(scan.nextLine());
+                break;
+            } catch (NumberFormatException ex) {
+                System.out.print("Invalid input, try again: ");
+            }
+        }
+        return x;
     }
 
     public static void main(String[] args) {
