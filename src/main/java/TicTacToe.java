@@ -47,10 +47,35 @@ public class TicTacToe {
 
     private void getPlayerMove(int playerId) {
 
-        // TODO: input validation
+        int x, y;
+        boolean isMoveCorrect;
         Scanner scan = new Scanner(System.in);
-        int x = scan.nextInt();
-        int y = scan.nextInt();
+        do {
+            isMoveCorrect = true;
+
+            // TODO: input validation
+            x = scan.nextInt();
+            y = scan.nextInt();
+
+            // check if a move is in correct range
+            if (x < 0 || y < 0 || x > 2 || y > 2) {
+                System.out.print("Incorrect move coordinates range (0-2)! Try again: ");
+                isMoveCorrect = false;
+                continue;
+            }
+
+            // check if a move is a duplicate
+            for (Move oldMove : moves)
+            {
+                if (oldMove.x == x && oldMove.y == y)
+                {
+                    isMoveCorrect = false;
+                    System.out.print("That field is checked! Try again: ");
+                    break;
+                }
+            }
+
+        } while (!isMoveCorrect);
 
         moves.add(new Move(playerId, x, y));
     }
