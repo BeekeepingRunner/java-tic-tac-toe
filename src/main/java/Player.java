@@ -9,7 +9,7 @@ public class Player {
     Player(String name, char mark) {
         this.name = name;
         this.mark = mark;
-        id = ++nextId;
+        id = nextId++;
     }
 
     public String getName() {

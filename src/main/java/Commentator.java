@@ -13,7 +13,7 @@ public class Commentator implements Printable{
         assert(moves.size() > 0);
 
         Move move = moves.get(moves.size() - 1);    // get last move
-        Player p = players.get(move.playerNum - 1); // indexing from 0
+        Player p = players.get(move.playerNum);
 
         StringBuilder sb = new StringBuilder("Player ")
                 .append(p.getName())
