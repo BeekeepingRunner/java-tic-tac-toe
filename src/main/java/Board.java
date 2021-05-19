@@ -46,4 +46,93 @@ public class Board implements Printable {
                 System.out.println("-----");
         }
     }
+
+    public boolean hasThreeInAline(boolean playerOneMoved) {
+
+        char mark;
+        if (playerOneMoved) {
+            mark = PLAYER_ONE_MARK;
+        } else {
+            mark = PLAYER_TWO_MARK;
+        }
+
+        if (hasThreeHorizontally(mark)
+        || hasThreeVertically(mark)
+        || hasThreeAslope(mark)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean hasThreeHorizontally(char mark) {
+
+        int marksInArow;
+        for (int row = 0; row < gridDimension; ++row)
+        {
+            marksInArow = 0;
+            for (int col = 0; col < gridDimension; ++col)
+            {
+                if (fields[row][col] == mark) {
+                    ++marksInArow;
+                } else break;
+            }
+
+            if (marksInArow == 3) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean hasThreeVertically(char mark) {
+
+        int marksInAcol;
+        for (int col = 0; col < gridDimension; ++col)
+        {
+            marksInAcol = 0;
+            for (int row = 0; row < gridDimension; ++row)
+            {
+                if (fields[col][row] == mark)
+                    ++marksInAcol;
+                else break;
+            }
+
+            if (marksInAcol == 3) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private boolean hasThreeAslope(char mark) {
+
+        int marksInALine = 0;
+        for (int row = 0, col = 0; row < gridDimension; ++row, ++col)
+        {
+            if (fields[row][col] == mark) {
+                ++marksInALine;
+            } else break;
+        }
+
+        if (marksInALine == 3) {
+            return true;
+        }
+
+        marksInALine = 0;
+        for (int row = 0, col = gridDimension - 1; row < gridDimension; ++row, --col)
+        {
+            if (fields[row][col] == mark) {
+                ++marksInALine;
+            } else break;
+        }
+
+        if (marksInALine == 3) {
+            return true;
+        }
+
+        return false;
+    }
 }

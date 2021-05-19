@@ -30,11 +30,9 @@ public class TicTacToe {
             if (playerOneMoves)
             {
                 this.getPlayerMove(FIRST_PLAYER_ID);
-                playerOneMoves = false;
             }
             else {
                 this.getPlayerMove(SECOND_PLAYER_ID);
-                playerOneMoves = true;
             }
 
             System.out.println();
@@ -42,6 +40,18 @@ public class TicTacToe {
             System.out.println();
             commentator.print(moves);
             System.out.println();
+
+            // let's check if the last move was a winning move!
+            if (hasWon(playerOneMoves))
+            {
+                if (playerOneMoves) {
+                    System.out.println("\n" + players.get(FIRST_PLAYER_ID).getName() + " won!!!");
+                } else {
+                    System.out.println("\n" + players.get(SECOND_PLAYER_ID).getName() + " won!!!");
+                }
+                return;
+            }
+            playerOneMoves = !playerOneMoves;
         }
     }
 
@@ -96,6 +106,14 @@ public class TicTacToe {
             }
         }
         return x;
+    }
+
+    private boolean hasWon(boolean playerOneMoved) {
+
+        if (board.hasThreeInAline(playerOneMoved)) {
+            return true;
+        } else
+            return false;
     }
 
     public static void main(String[] args) {
