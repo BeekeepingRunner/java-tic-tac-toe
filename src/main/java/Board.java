@@ -3,6 +3,8 @@ import java.util.ArrayList;
 public class Board implements Printable {
 
     public static final int gridDimension = 3;
+    public static final char PLAYER_ONE_MARK = 'O';
+    public static final char PLAYER_TWO_MARK = 'X';
 
     char[][] fields = new char[gridDimension][gridDimension];   // 3x3 grid
 
@@ -25,10 +27,10 @@ public class Board implements Printable {
             switch (move.playerNum)
             {
                 case TicTacToe.FIRST_PLAYER_ID:
-                    fields[move.x][move.y] = 'O';
+                    fields[move.x][move.y] = PLAYER_ONE_MARK;
                     break;
                 case TicTacToe.SECOND_PLAYER_ID:
-                    fields[move.x][move.y] = 'X';
+                    fields[move.x][move.y] = PLAYER_TWO_MARK;
                     break;
             }
         }
