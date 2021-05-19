@@ -23,6 +23,9 @@ public class TicTacToe {
 
     public void play() {
 
+        board.print(moves);
+        System.out.println();
+
         boolean playerOneMoves = true;
         int moveCount = 0;
         while (true)
