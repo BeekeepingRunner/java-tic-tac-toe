@@ -112,7 +112,7 @@ public class Board implements Printable {
             marksInAcol = 0;
             for (int row = 0; row < gridDimension; ++row)
             {
-                if (fields[col][row] == mark)
+                if (fields[row][col] == mark)
                     ++marksInAcol;
                 else break;
             }
