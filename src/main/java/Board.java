@@ -10,7 +10,10 @@ public class Board implements Printable {
     char[][] fields = new char[gridDimension][gridDimension];   // 3x3 grid
 
     Board() {
+        clear();
+    }
 
+    public void clear() {
         for (int i = 0; i < gridDimension; ++i)
         {
             for (int j = 0; j < gridDimension; ++j)
