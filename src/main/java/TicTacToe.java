@@ -30,7 +30,7 @@ public class TicTacToe {
 
     private boolean wantToPlayAgain() {
 
-        System.out.println("Do you want to play again? (y/n) : ");
+        System.out.print("Do you want to play again? (y/n) : ");
 
         Scanner scan = new Scanner(System.in);
         if (scan.nextLine().charAt(0) == 'y') {
@@ -44,6 +44,7 @@ public class TicTacToe {
 
     private void playRound() {
 
+        System.out.println();
         board.print(moves);
         System.out.println();
 
