@@ -54,6 +54,12 @@ public class TicTacToe {
                 }
                 return;
             }
+
+            if (board.isFull()) {
+                System.out.println("\nThe board is full, so it's a draw. :)");
+                return;
+            }
+
             playerOneMoves = !playerOneMoves;
         }
     }

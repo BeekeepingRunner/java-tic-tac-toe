@@ -48,6 +48,20 @@ public class Board implements Printable {
         }
     }
 
+    public boolean isFull() {
+
+        for (int row = 0; row < gridDimension; ++row)
+        {
+            for (int col = 0; col < gridDimension; ++col)
+            {
+                if (fields[row][col] == EMPTY_FIELD_CHARACTER)
+                    return false;
+            }
+        }
+
+        return true;
+    }
+
     public boolean hasThreeInAline(boolean playerOneMoved) {
 
         char mark;
