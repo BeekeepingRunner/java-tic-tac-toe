@@ -23,6 +23,27 @@ public class TicTacToe {
 
     public void play() {
 
+        do {
+            playRound();
+        } while (wantToPlayAgain());
+    }
+
+    private boolean wantToPlayAgain() {
+
+        System.out.println("Do you want to play again? (y/n) : ");
+
+        Scanner scan = new Scanner(System.in);
+        if (scan.nextLine().charAt(0) == 'y') {
+            board.clear();
+            moves.clear();
+            return true;
+        }
+        else
+            return false;
+    }
+
+    private void playRound() {
+
         board.print(moves);
         System.out.println();
 
