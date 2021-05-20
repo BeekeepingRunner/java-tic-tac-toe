@@ -48,7 +48,6 @@ public class TicTacToe {
         System.out.println();
 
         boolean playerOneMoves = true;
-        int moveCount = 0;
         while (true)
         {
             if (playerOneMoves)
