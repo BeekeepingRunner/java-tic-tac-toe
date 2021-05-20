@@ -119,10 +119,7 @@ public class TicTacToe {
 
     private boolean hasWon(boolean playerOneMoved) {
 
-        if (board.hasThreeInAline(playerOneMoved)) {
-            return true;
-        } else
-            return false;
+        return board.hasThreeInAline(playerOneMoved);
     }
 
     public static void main(String[] args) {
