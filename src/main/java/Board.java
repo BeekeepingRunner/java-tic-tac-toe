@@ -5,6 +5,7 @@ public class Board implements Printable {
     public static final int gridDimension = 3;
     public static final char PLAYER_ONE_MARK = 'O';
     public static final char PLAYER_TWO_MARK = 'X';
+    public static final char EMPTY_FIELD_CHARACTER = ' ';
 
     char[][] fields = new char[gridDimension][gridDimension];   // 3x3 grid
 
@@ -14,7 +15,7 @@ public class Board implements Printable {
         {
             for (int j = 0; j < gridDimension; ++j)
             {
-                fields[i][j] = ' ';
+                fields[i][j] = EMPTY_FIELD_CHARACTER;
             }
         }
     }
