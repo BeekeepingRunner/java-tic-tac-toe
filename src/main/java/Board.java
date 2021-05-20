@@ -41,14 +41,16 @@ public class Board implements Printable {
 
         for (int i = 0; i < gridDimension; ++i)
         {
-            // e.g. print X|O|X
+            System.out.print(i + " ");
             System.out.print(fields[i][gridDimension - 3] + "|");
             System.out.print(fields[i][gridDimension - 2] + "|");
             System.out.println(fields[i][gridDimension - 1]);
 
             if (i < 2)
-                System.out.println("-----");
+                System.out.println("  -----");
         }
+
+        System.out.println("  0 1 2");
     }
 
     public boolean isFull() {
