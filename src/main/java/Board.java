@@ -67,6 +67,11 @@ public class Board implements Printable {
         return true;
     }
 
+    public boolean isChecked(int x, int y) {
+
+        return fields[x][y] != EMPTY_FIELD_CHARACTER;
+    }
+
     public boolean hasThreeInAline(boolean playerOneMoved) {
 
         char mark;

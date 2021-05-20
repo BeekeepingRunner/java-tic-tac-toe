@@ -99,23 +99,17 @@ public class TicTacToe {
             System.out.print("y: ");
             y = getCoordinate();
 
-            // check if a move is in correct range
             if (x < 0 || y < 0 || x > 2 || y > 2) {
                 System.out.println("Incorrect move coordinates range (0-2)! Try again: ");
                 isMoveCorrect = false;
                 continue;
             }
 
-            // check if a move is a duplicate
-            for (Move oldMove : moves)
-            {
-                if (oldMove.x == x && oldMove.y == y)
-                {
-                    isMoveCorrect = false;
-                    System.out.println("That field is checked! Try again");
-                    break;
-                }
+            if (board.isChecked(x, y)) {
+                isMoveCorrect = false;
+                System.out.println("That field is checked! Try again");
             }
+
         } while (!isMoveCorrect);
 
         moves.add(new Move(playerId, x, y));
