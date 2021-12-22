@@ -1,2 +1,2 @@
 # java-tic-tac-toe
-Tic-tac-toe game
+Console Tic-tac-toe game in Java for two players.
